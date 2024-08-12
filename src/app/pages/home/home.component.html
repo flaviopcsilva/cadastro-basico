@@ -1,0 +1,39 @@
+<div class="form-container">
+    <div class="login-wrapper">
+        <div class="image-container">
+            <img src="https://t.ctcdn.com.br/DIEZqF3nbik0L6OFXKhoTDDj69Y=/27x180:5202x3095/640x360/smart/i334625.jpeg"
+                alt="">
+            <!-- Imagem do lado esquerdo -->
+        </div>
+        <div class="form-section">
+            <h2>Login</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" formControlName="email" type="email" placeholder="Digite seu email">
+                    <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+                        class="error-message">
+                        Email inválido
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input id="senha" formControlName="senha" type="password" placeholder="Digite sua senha">
+                    <div *ngIf="loginForm.get('senha')?.invalid && loginForm.get('senha')?.touched"
+                        class="error-message">
+                        Senha é obrigatória
+                    </div>
+                </div>
+                <button type="submit" [disabled]="loginForm.invalid">Login</button>
+                <div class="options">
+                    <a href="#">Esqueci minha senha</a> |
+                    <a href="cadastro">Não tenho cadastro? Faça o cadastro aqui</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div *ngIf="notification.message" class="notification"
+        [ngClass]="{'show': notification.message, 'error': !notification.success}">
+        {{ notification.message }}
+    </div>
+</div>

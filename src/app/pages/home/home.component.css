@@ -1,0 +1,139 @@
+/* Container para o formulário */
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+    /* Cor de fundo clara para contraste */
+}
+
+.login-wrapper {
+    display: flex;
+    max-width: 900px;
+    /* Largura máxima do container */
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    overflow: hidden;
+    /* Oculta partes do conteúdo que estão fora da borda */
+}
+
+.image-container {
+    flex: 1;
+    background-size: cover;
+    height: 100%;
+    align-items: center;
+}
+
+.image-container img {
+    width: 100%;
+    align-items: center;
+    margin-top: 13vh;
+}
+
+.form-section {
+    flex: 1;
+    padding: 40px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #666;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* Inclui o padding e a borda no tamanho total do elemento */
+}
+
+.form-group input.ng-invalid.ng-touched {
+    border-color: #dc3545;
+    /* Cor de borda para erro */
+}
+
+.form-group input.ng-valid.ng-touched {
+    border-color: #28a745;
+    /* Cor de borda para sucesso */
+}
+
+.form-group .error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+.options {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.options a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para notificações */
+.notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #28a745;
+    /* Cor de fundo para sucesso */
+    display: none;
+}
+
+.notification.error {
+    background-color: #dc3545;
+    /* Cor de fundo para erro */
+}
+
+.notification.show {
+    display: block;
+}

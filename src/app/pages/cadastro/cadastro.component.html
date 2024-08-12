@@ -1,0 +1,89 @@
+<div class="cadastro-container">
+    <h2>Cadastro de Cliente</h2>
+    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmitCadastro()">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input id="nome" formControlName="nome" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email" />
+            <!-- Mensagem de erro para email -->
+            <div *ngIf="cadastroForm.get('email')?.invalid && (cadastroForm.get('email')?.touched || cadastroForm.get('email')?.dirty)"
+                class="error-message">
+                <div *ngIf="cadastroForm.get('email')?.errors?.['required']">O email é obrigatório.</div>
+                <div *ngIf="cadastroForm.get('email')?.errors?.['email']">O email é inválido.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="senha">Senha</label>
+            <input id="senha" type="password" formControlName="senha" />
+        </div>
+        <div class="form-group">
+            <label for="confirmarSenha">Confirmar Senha</label>
+            <input id="confirmarSenha" type="password" formControlName="confirmarSenha" />
+            <div class="senha2"
+                *ngIf="cadastroForm.hasError('matchPassword') && cadastroForm.get('confirmarSenha')?.touched">
+                <label for="" class="error-message">As senhas não coincidem.</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input id="cpf" formControlName="cpf" />
+        </div>
+        <div class="form-group">
+            <label for="data_de_nascimento">Data de Nascimento</label>
+            <input id="data_de_nascimento" formControlName="data_de_nascimento" />
+        </div>
+        <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input id="telefone" formControlName="telefone" />
+        </div>
+        <div class="form-group">
+            <label for="cep">CEP</label>
+            <input id="cep" formControlName="cep" (blur)="buscarEnderecoPorCep(cadastroForm.value.cep)" />
+        </div>
+        <div class="form-group">
+            <label for="rua">Rua</label>
+            <input id="rua" formControlName="rua" readonly />
+        </div>
+        <div class="form-group">
+            <label for="bairro">Bairro</label>
+            <input id="bairro" formControlName="bairro" readonly />
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade</label>
+            <input id="cidade" formControlName="cidade" readonly />
+        </div>
+        <div class="form-group">
+            <label for="estado">Estado</label>
+            <input id="estado" formControlName="estado" readonly />
+        </div>
+        <div class="form-group">
+            <label for="numero">Número</label>
+            <input id="numero" formControlName="numero" />
+        </div>
+        <div class="form-group">
+            <label for="complemento">Complemento</label>
+            <input id="complemento" formControlName="complemento" />
+        </div>
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <!-- Popup de verificação -->
+    <div *ngIf="showVerificationPopup" class="verification-popup">
+        <h3>Confirme seu Cadastro</h3>
+        <form [formGroup]="verificationForm" (ngSubmit)="onSubmitVerification()" class="form-verificacao">
+            <label for="email">Email</label>
+            <input id="email" formControlName="email" />
+            <label for="codigo">Código de Verificação</label>
+            <input id="codigo" formControlName="codigo" />
+            <button type="submit">Confirmar</button>
+        </form>
+    </div>
+
+    <!-- Notificação -->
+    <div class="notification" [ngClass]="{ 'success': notification.success, 'error': !notification.success }">
+        {{ notification.message }}
+    </div>
+</div>

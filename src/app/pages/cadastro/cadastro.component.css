@@ -1,0 +1,150 @@
+/* Container principal do formulário */
+.cadastro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Título do formulário */
+.cadastro-container h2 {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo do formulário */
+form {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Estilo para mensagens de erro */
+.error-message {
+    color: #dc3545;
+    /* Cor de erro */
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+
+/* Grupos de formulários */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Rótulos dos campos */
+.form-group label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Campos de entrada */
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #0072ff;
+    box-shadow: 0px 0px 8px rgba(0, 114, 255, 0.5);
+    outline: none;
+}
+
+/* Botão de envio */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #0072ff;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #005bb5;
+}
+
+.senha2 {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Popup de verificação */
+.verification-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 110%;
+    max-width: 650px;
+    z-index: 1000;
+}
+
+.verification-popup h3 form button {
+    padding: 15px;
+    margin-top: 15px;
+}
+
+/* Notificação */
+.notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #28a745;
+    /* Cor de fundo para sucesso */
+    display: none;
+    font-size: 16px;
+}
+
+.notification.error {
+    background-color: #dc3545;
+    /* Cor de fundo para erro */
+}
+
+.notification.show {
+    display: block;
+}
+
+/* Animação do popup */
+@keyframes slide-in {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+.verification-popup {
+    animation: slide-in 0.5s ease-in-out;
+}

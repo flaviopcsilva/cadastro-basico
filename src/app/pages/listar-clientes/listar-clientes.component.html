@@ -1,0 +1,35 @@
+<!---outro conteudo-->
+<div class="container">
+    <!-- Conteúdo -->
+    <div class="header">
+        <img src="https://www.agenciatipo.com.br/img/palavras-chave/propaganda-na-internet.jpg" alt="Logo" />
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="cadastro">Cadastro</a>
+            <a href="#">Sair</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="cliente-lista">
+            <div class="cliente-item" *ngFor="let cliente of clientes" (click)="selecionarCliente(cliente)">
+                {{ cliente.nome }} - {{ cliente.email }} - {{ cliente.bairro }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="popup" *ngIf="clienteSelecionado">
+        <div class="popup-content">
+            <h3>{{ clienteSelecionado.nome }}</h3>
+            <p>{{ clienteSelecionado.email }}</p>
+            <button (click)="editarCliente(clienteSelecionado)">Editar</button>
+            <button (click)="excluirCliente(clienteSelecionado)">Excluir</button>
+            <button (click)="fecharPopup()">Cancelar</button>
+        </div>
+    </div>
+    <!-- Notificação -->
+    <div class="notification"
+        [ngClass]="{ 'show': notification.message, 'success': notification.success, 'error': !notification.success }">
+        {{ notification.message }}
+    </div>
+</div>
