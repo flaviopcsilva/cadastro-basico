@@ -1,27 +1,40 @@
-# CadastroRapido
+# Cadastro Rápido
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
+**Cadastro Rápido** é uma aplicação web desenvolvida com Angular e Node.js para gerenciar o registro de clientes de forma rápida e eficiente. A aplicação permite o cadastro de clientes, validação de dados e envio de confirmação por e-mail.
 
-## Development server
+![Screenshot](https://via.placeholder.com/800x400?text=Screenshot+of+the+application) <!-- Adicione uma captura de tela da sua aplicação -->
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Índice
 
-## Code scaffolding
+- [Visão Geral](#visão-geral)
+- [Tecnologias Usadas](#tecnologias-usadas)
+- [Instalação](#instalação)
+- [Uso](#uso)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Visão Geral
 
-## Build
+A aplicação **Cadastro Rápido** permite o cadastro e confirmação de clientes com as seguintes funcionalidades:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Cadastro Completo**: Formulário para registrar informações pessoais e de contato dos clientes.
+- **Validação de Dados**: Verificação de dados de entrada, como email e CPF.
+- **Confirmação por E-mail**: Envio de código de verificação para confirmar o cadastro.
+- **Integração com APIs**: Utilização de APIs para validação de CEP e envio de dados.
 
-## Running unit tests
+## Tecnologias Usadas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Frontend**: Angular, Ngx-Mask
+- **Backend**: Node.js, Express
+- **Banco de Dados**: PostgreSQL
+- **API de CEP**: ViaCEP
+- **Bibliotecas**: `ngx-mask`, `@angular/forms`, `@angular/common`, `@angular/http`
 
-## Running end-to-end tests
+## Instalação
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Clonar o Repositório
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+git clone https://github.com/username/cadastro-rapido.git
+cd cadastro-rapido
