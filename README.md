@@ -2,7 +2,7 @@
 
 **Cadastro Rápido** é uma aplicação web desenvolvida com Angular e Node.js para gerenciar o registro de clientes de forma rápida e eficiente. A aplicação permite o cadastro de clientes, validação de dados e envio de confirmação por e-mail.
 
-![Screenshot](https://ibb.co/1RX3DRZ) <!-- Adicione uma captura de tela da sua aplicação -->
+![Screenshot](https://github.com/flaviopcsilva/cadastro-basico/blob/master/src/assets/screanshoot.jpg) <!-- Adicione uma captura de tela da sua aplicação -->
 
 ## Índice
 
